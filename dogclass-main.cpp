@@ -8,7 +8,7 @@ with
 
 #include <iostream>
 #include <string>
-using namespace std;
+using namespace std; 
 
 class Dog // begin declaration of the Dog class
 {
