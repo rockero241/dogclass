@@ -19,11 +19,11 @@ public:                    // begin public section
 	Dog(string whatName) { // constructor
 		dogName = whatName;  //set to dog name parameter
 	}
-	string getName() const { //public accessor function
+	string getName() const { // accessor aka getter method
 		// returns value of private member variable
 		return dogName;
 	}
-	void setName(string name) {    // mutator function
+	void setName(string name) { // mutator aka setter method
 	// set member variable dogName to
 	// value passed in by parameter name
 		dogName = name;
@@ -45,7 +45,7 @@ public:                    // begin public section
 		return; //optional return
 	}
 private:                   // begin private section
-	string dogName;        // private member variable
+	string dogName;        // private member 
 }; //don't forget semi-colon with C++ classes!!
 
 
@@ -54,11 +54,15 @@ int main() {
 
 	Dog averagedog; //uses default constructor
 	averagedog.show();
-	cout << "\nI call my dog: " << averagedog.getName() << endl;//use of accessor getName()
 
+	averagedog.setName("Doggie"); //use of setter setName()
+	cout << "\nI call my dog: " << averagedog.getName() << endl; //use of getter getName()
 	cout << "My dog likes to say: ";
 	averagedog.bark(); //use of method bark()
+
+	Dog lassiedog("Lassie"); //uses constructor
 	cout << endl;
+	lassiedog.show();
 
 	cin >> stopme;  //holds console open in some cases
 	return 0;
