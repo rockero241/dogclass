@@ -13,6 +13,7 @@ using namespace std;
 class Dog // begin declaration of the Dog class
 {
 public:                    // begin public section
+	friend ostream& operator << (ostream& stream, const Dog& dog); // overload << operator
 	Dog() { // default constructor
 		dogName = "dog";  //set to generic dog name
 	}
@@ -35,7 +36,7 @@ public:                    // begin public section
 		/** shows dog pic and display's dogName
 		Art modified from https://www.asciiart.eu/animals/dogs
 		original art by by Joan Stark */
-		cout << "  .-\"-." << endl;
+		cout << "  .-\"-." << endl;          
 		cout << " /|6 6|\\" << endl;
 		cout << "{/(_0_)\\}" << endl;
 		cout << " _/ ^ \\_" << endl;
@@ -47,6 +48,17 @@ public:                    // begin public section
 private:                   // begin private section
 	string dogName;        // private member 
 }; //don't forget semi-colon with C++ classes!!
+
+ostream& operator << (ostream& stream, const Dog& dog) {
+	stream << "  .-\"-." << endl;
+	stream << " /|6 6|\\" << endl;
+	stream << "{/(_0_)\\}" << endl;
+	stream << " _/ ^ \\_" << endl;
+	stream << "(/ /^\\ \\)-'" << endl;
+	stream << " \"\"' '\"\" " << endl;
+	stream << "   " << Dog.dogName << "\n" << endl;
+	return stream;
+}
 
 
 int main() {
